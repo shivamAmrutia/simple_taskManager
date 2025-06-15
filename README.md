@@ -1,50 +1,86 @@
-# Welcome to your Expo app 👋
+# React Native Task Manager App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple and elegant task manager app built with **React Native**, **Expo**, and **TypeScript**.
 
-## Get started
+It allows users to:
+- ✅ Add new tasks
+- ✅ Mark tasks as complete
+- ✅ Delete tasks with animated feedback
+- ✅ View tasks in a clean list
+- ✅ Enjoy light/dark mode support and responsive UI
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## ✨ Features
 
-2. Start the app
+- **Add Tasks** using input + Enter key or button
+- **Complete Tasks** with checkbox + bounce animation
+- **Delete Tasks** with a shrink/fade animation and toast confirmation
+- **Responsive UI** that adapts to light/dark themes
+- **Keyboard dismiss** after task entry
 
-   ```bash
-   npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+## 🚀 Getting Started
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+### 1. Clone the Repo
 ```bash
-npm run reset-project
+git clone https://github.com/yourusername/task-manager-app.git
+cd task-manager-app
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-## Learn more
+### 3. Run the App
+```bash
+npx expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Open with the **Expo Go app** on mobile or an emulator.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 📁 Project Structure
 
-Join our community of developers creating universal apps.
+```
+.
+├── app/
+│   └── index.tsx            # Main app screen
+├── components/
+│   └── TaskItem.tsx         # Task item with animations + toast
+├── types/
+│   └── index.ts             # Task type
+├── theme/
+│   └── index.ts             # Light/dark theme config
+├── assets/                  # (Optional) Static assets
+├── package.json
+├── app.json
+└── README.md
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## 🧩 Tech Stack
+
+- **React Native (Expo)**
+- **TypeScript**
+- **React Hooks (`useState`, `useEffect`, `useRef`)**
+- **Animated API**
+- **react-native-toast-message**
+- **@expo/vector-icons**
+
+---
+
+## 🧪 Third-Party Libraries
+
+| Library                   | Purpose                             |
+|---------------------------|-------------------------------------|
+| `@expo/vector-icons`      | Icons (checkbox, trash)             |
+| `react-native-toast-message` | Toast on task deletion          |
+
+---
+
+
+
