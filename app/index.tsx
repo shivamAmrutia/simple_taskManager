@@ -2,13 +2,29 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import {
   Button,
-  FlatList, Keyboard, SafeAreaView, StyleSheet, Text,
+  FlatList, Keyboard,
+  Platform, SafeAreaView, StyleSheet, Text,
   TextInput, useColorScheme, View
 } from 'react-native';
-import Toast from 'react-native-toast-message';
+import Toast, { BaseToast, ToastConfig } from 'react-native-toast-message';
 import TaskItem from '../components/TaskItem';
 import { darkTheme, lightTheme, Theme } from '../theme';
 import { Task } from '../types';
+
+const toastConfig: ToastConfig = {
+  custom: (props) => (
+    <BaseToast
+      {...props}
+      style={{ backgroundColor: '#444' }}
+      contentContainerStyle={{ paddingHorizontal: 15 }}
+      text1Style={{
+        color: '#fff',
+        fontSize: 15,
+        fontWeight: '500',
+      }}
+    />
+  ),
+};
 
 export default function HomeScreen() {
   const scheme = useColorScheme();
@@ -26,7 +42,7 @@ export default function HomeScreen() {
     };
     setTasks([newTask, ...tasks]);
     setInput('');
-    Keyboard.dismiss(); // Close keyboard after adding
+    Keyboard.dismiss();
   };
 
   const toggleTask = (id: string) => {
@@ -49,6 +65,9 @@ export default function HomeScreen() {
     container: {
       flex: 1,
       padding: 20,
+      paddingTop: Platform.OS === 'web' ? 40 : 20,       // Extra top padding for web
+      paddingLeft: Platform.OS === 'web' ? 40 : 20,      // Extra horizontal padding for web
+      paddingRight: Platform.OS === 'web' ? 40 : 20,
     },
     header: {
       fontSize: 28,
@@ -109,8 +128,8 @@ export default function HomeScreen() {
         />
       </SafeAreaView>
 
-      {/*Toast must be rendered here */}
-      <Toast />
+      {/* ✅ Toast renderer */}
+      <Toast config={toastConfig} />
     </View>
   );
 }
