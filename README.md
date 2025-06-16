@@ -24,7 +24,7 @@ It allows users to:
 
 ### 1. Clone the Repo
 ```bash
-git clone https://github.com/yourusername/task-manager-app.git
+git clone https://github.com/shivamAmrutia/simple_taskManager.git
 cd task-manager-app
 ```
 
